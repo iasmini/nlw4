@@ -1,11 +1,14 @@
 import styles from '../styles/components/Countdown.module.css'
-import {useState, useEffect} from "react";
+import {useState, useEffect, useContext} from "react";
+import {ChallengesContext} from "../contexts/ChallengesContext";
 
 // let hasAType: boolean = true ==> set a type (boolean) and assigned it a value
 // use the colon to set the type of our variable
 let countdownTimeout: NodeJS.Timeout
 
 export function Countdown() {
+  const { startNewChallenge } = useContext(ChallengesContext)
+
   const [time, setTime] = useState(0.05 * 60)
   const [countdownStarted, setCountdownStarted] = useState(false)
   const [hasFinished, setHasFinished] = useState(false)
@@ -41,6 +44,7 @@ export function Countdown() {
     } else if (countdownStarted && time === 0) {
       setHasFinished(true)
       setCountdownStarted(false)
+      startNewChallenge()
     }
   }, [countdownStarted, time])  // executa toda vez q o active ou o time muda
 
