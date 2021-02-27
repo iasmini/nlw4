@@ -16,20 +16,18 @@ export default function Home() {
         <title>Início | Moveit</title>
       </Head>
       <ExperienceBar />
-      <section>
-        <div>
-          <Profile />
-          <CompletedChallenges />
-          <CountdownProvider>
-            <Countdown />
-          </CountdownProvider>
-        </div>
-        <div>
-          <CountdownProvider>
-            <ChallengeBox />
-          </CountdownProvider>
-        </div>
-      </section>
+      <CountdownProvider>
+        <section>
+          <div>
+            <Profile />
+            <CompletedChallenges />
+              <Countdown />
+          </div>
+          <div>
+              <ChallengeBox />
+          </div>
+        </section>
+      </CountdownProvider>
     </div>
   )
 }

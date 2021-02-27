@@ -3,25 +3,25 @@ import {createContext, useState, ReactNode} from "react";
 import challenges from '../../challenges.json'
 
 interface Challenge {
-  type: 'body' | 'eye',
-  description: string,
-  amount: number
+  type: 'body' | 'eye';
+  description: string;
+  amount: number;
 }
 
 interface ChallengesContextData {
-  level: number,
-  currentExperience: number,
-  challengesCompleted: number,
-  experienceToNextLevel: number,
-  activeChallenge: Challenge,
-  levelUp: () => void,
-  startNewChallenge: () => void,
-  resetChallenge: () => void,
-  completeChallenge: () => void
+  level: number;
+  currentExperience: number;
+  challengesCompleted: number;
+  experienceToNextLevel: number;
+  activeChallenge: Challenge;
+  levelUp: () => void;
+  startNewChallenge: () => void;
+  resetChallenge: () => void;
+  completeChallenge: () => void;
 }
 
 interface ChallengesProviderProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 export const ChallengesContext = createContext({} as ChallengesContextData)
